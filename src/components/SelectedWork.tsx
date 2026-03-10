@@ -92,10 +92,10 @@ const SelectedWork = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-60px" }}
-        className="grid grid-cols-4 md:grid-cols-12 auto-rows-[140px] md:auto-rows-[160px] gap-4 md:gap-5">
+        className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 auto-rows-auto md:auto-rows-[140px] lg:auto-rows-[160px] gap-3 md:gap-4 lg:gap-5">
 
         {/* 1 · Summit Partners — Growth Equity (Large) */}
-        <BentoCard className="col-span-4 md:col-span-6 row-span-2 bg-muted p-8 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-6 row-span-1 md:row-span-2 bg-muted p-5 md:p-6 lg:p-8 flex flex-col justify-between">
           <div>
             <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70"><TrendingUp className="w-4 h-4 shrink-0" />Growth Equity</span>
             <div className="mt-5">
@@ -122,7 +122,7 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 2 · Sana — Startup Ops (Medium) */}
-        <BentoCard className="col-span-2 md:col-span-3 row-span-2 bg-foreground text-primary-foreground p-6 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-3 row-span-1 md:row-span-2 bg-foreground text-primary-foreground p-4 md:p-5 lg:p-6 flex flex-col justify-between">
           <div>
             <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60"><Rocket className="w-4 h-4 shrink-0" />Startup Operations</span>
             <div className="mt-5">
@@ -139,7 +139,7 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 3 · Evercore — Investment Banking (Medium) */}
-        <BentoCard className="col-span-2 md:col-span-3 row-span-2 bg-background p-6 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-3 row-span-1 md:row-span-2 bg-background p-4 md:p-5 lg:p-6 flex flex-col justify-between">
           <div>
             <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70"><Landmark className="w-4 h-4 shrink-0" />Investment Banking</span>
             <div className="mt-5">
@@ -168,7 +168,7 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 4 · HBS — MBA */}
-        <BentoCard className="col-span-2 md:col-span-4 row-span-2 bg-foreground text-primary-foreground p-6 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-4 row-span-1 md:row-span-2 bg-foreground text-primary-foreground p-4 md:p-5 lg:p-6 flex flex-col justify-between">
           <div>
             <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60"><GraduationCap className="w-4 h-4 shrink-0" />Graduate School</span>
             <div className="mt-5">
@@ -188,7 +188,7 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 5 · Yale — BA */}
-        <BentoCard className="col-span-2 md:col-span-4 row-span-2 bg-muted p-6 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-4 row-span-1 md:row-span-2 bg-muted p-4 md:p-5 lg:p-6 flex flex-col justify-between">
           <div>
             <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70"><GraduationCap className="w-4 h-4 shrink-0" />Undergraduate Education</span>
             <div className="mt-5">
@@ -211,42 +211,42 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 6 · RCM — Music Theory */}
-        <BentoCard className="col-span-2 md:col-span-2 row-span-1 bg-background p-5 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-2 lg:col-span-2 row-span-1 bg-background p-4 md:p-5 flex flex-col justify-between">
           <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70 mb-3"><Music className="w-4 h-4 shrink-0" />Music</span>
           <LinkedLogo src={rcmLogo} alt="Royal Conservatory of Music" href="https://www.rcmusic.com/" className="h-[48px] max-w-full w-auto object-contain" />
           <p className="text-xs font-body text-muted-foreground leading-snug mt-auto">Pianist and music theory teacher</p>
         </BentoCard>
 
         {/* 7 · 261 Fearless — Nonprofit */}
-        <BentoCard className="col-span-2 md:col-span-2 row-span-1 bg-foreground p-5 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-2 lg:col-span-2 row-span-1 bg-foreground p-4 md:p-5 flex flex-col justify-between">
           <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60 mb-3"><Heart className="w-4 h-4 shrink-0" />FUNDRAISING</span>
           <LinkedLogo src={fearlessLogo} alt="261 Fearless" href="https://www.261fearless.org/" className="h-[48px] max-w-full w-auto object-contain invert mix-blend-lighten" />
           <p className="text-xs font-body text-muted/70 leading-snug mt-auto">2024 Boston Marathon charity team</p>
         </BentoCard>
 
         {/* 8 · Synergist */}
-        <BentoCard className="col-span-2 md:col-span-2 row-span-1 bg-muted p-5 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-2 lg:col-span-2 row-span-1 bg-muted p-4 md:p-5 flex flex-col justify-between">
           <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70 mb-3"><Briefcase className="w-4 h-4 shrink-0" />Nonprofit</span>
           <LinkedLogo src={synergistLogo} alt="Synergist" href="https://www.synergistnetwork.com/" className="h-[48px] max-w-full w-auto object-contain mix-blend-multiply" />
           <p className="text-xs font-body text-muted-foreground leading-snug mt-auto">Boston chapter co-president</p>
         </BentoCard>
 
         {/* 9 · Alliance Française */}
-        <BentoCard className="col-span-2 md:col-span-2 row-span-1 bg-background p-5 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-2 lg:col-span-2 row-span-1 bg-background p-4 md:p-5 flex flex-col justify-between">
           <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70 mb-3"><Palette className="w-4 h-4 shrink-0" />Culture</span>
           <LinkedLogo src={afLogo} alt="Alliance Française" href="https://www.afscv.org/" className="h-[48px] max-w-full w-auto object-contain mix-blend-multiply" />
           <p className="text-xs font-body text-muted-foreground leading-snug mt-auto">Board member</p>
         </BentoCard>
 
         {/* 10 · Louisville Metro — Government */}
-        <BentoCard className="col-span-2 md:col-span-2 row-span-1 bg-background p-5 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-2 lg:col-span-2 row-span-1 bg-background p-4 md:p-5 flex flex-col justify-between">
           <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70 mb-3"><Building2 className="w-4 h-4 shrink-0" />Government</span>
           <LinkedLogo src={louisvilleLogo} alt="Louisville Metro" href="https://louisvilleky.gov/government/continuous-improvement" className="h-[48px] max-w-full w-auto object-contain mix-blend-multiply" />
           <p className="text-xs font-body text-muted-foreground leading-snug mt-auto">City consultant</p>
         </BentoCard>
 
         {/* 11 · Global Experience */}
-        <BentoCard className="col-span-2 md:col-span-3 row-span-1 bg-muted p-5 flex flex-col">
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-3 row-span-1 bg-muted p-4 md:p-5 flex flex-col">
           <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70 mb-3"><Globe className="w-4 h-4 shrink-0" />Global Experience</span>
           <div className="flex items-center gap-2 my-auto">
             <span className="text-base" aria-label="United States">🇺🇸</span>
@@ -256,13 +256,13 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 12 · Languages */}
-        <BentoCard className="col-span-2 md:col-span-3 row-span-1 bg-foreground p-5 flex flex-col">
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-3 row-span-1 bg-foreground p-4 md:p-5 flex flex-col">
           <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60 mb-3"><Languages className="w-4 h-4 shrink-0" />Languages</span>
           <p className="text-xs font-body text-muted/70 my-auto leading-snug">English · French · Mandarin</p>
         </BentoCard>
 
         {/* 13 · Public Speaking */}
-        <BentoCard className="col-span-4 md:col-span-4 row-span-1 bg-background p-5 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-8 lg:col-span-4 row-span-1 bg-background p-4 md:p-5 flex flex-col justify-between">
           <div>
             <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70"><Mic className="w-4 h-4 shrink-0" />Public Speaking</span>
             <p className="text-sm font-body text-foreground/70 leading-relaxed mt-2">Former nationally ranked bilingual public speaker in Canada     </p>
