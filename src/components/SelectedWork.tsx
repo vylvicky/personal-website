@@ -168,7 +168,7 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 4 · HBS — MBA */}
-        <BentoCard className="col-span-2 md:col-span-4 row-span-2 bg-foreground text-primary-foreground p-6 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-4 row-span-1 md:row-span-2 bg-foreground text-primary-foreground p-4 md:p-5 lg:p-6 flex flex-col justify-between">
           <div>
             <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60"><GraduationCap className="w-4 h-4 shrink-0" />Graduate School</span>
             <div className="mt-5">
