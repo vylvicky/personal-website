@@ -92,7 +92,7 @@ const SelectedWork = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-60px" }}
-        className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 auto-rows-auto md:auto-rows-[140px] lg:auto-rows-[160px] gap-3 md:gap-4 lg:gap-5">
+        className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 auto-rows-auto lg:auto-rows-[160px] gap-3 md:gap-4 lg:gap-5">
 
         {/* 1 · Summit Partners — Growth Equity (Large) */}
         <BentoCard className="col-span-4 md:col-span-4 lg:col-span-6 row-span-1 md:row-span-2 bg-muted p-5 md:p-6 lg:p-8 flex flex-col justify-between">
