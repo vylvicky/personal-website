@@ -256,7 +256,7 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 12 · Languages */}
-        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-3 row-span-1 bg-foreground p-4 md:p-5 flex flex-col">
+        <BentoCard className="col-span-4 md:col-span-3 lg:col-span-3 row-span-1 bg-foreground p-4 md:p-5 flex flex-col">
           <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60 mb-3"><Languages className="w-4 h-4 shrink-0" />Languages</span>
           <p className="text-xs font-body text-muted/70 my-auto leading-snug">English · French · Mandarin</p>
         </BentoCard>
