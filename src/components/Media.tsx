@@ -228,7 +228,7 @@ const Media = () => {
             </span>
             <div className="grid grid-cols-2 gap-4">
               <div className="group rounded-xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5">
-                <img src={cartoonWaymo} alt="Not Like The Other Girls cartoon" className="w-full h-auto object-cover" />
+                <img src={cartoonWaymo} alt="Finance people hate the F1 key but love F1 cartoon" className="w-full h-auto object-cover" />
               </div>
               <div className="group rounded-xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5">
                 <img src={cartoonCollars} alt="White collar layoffs cartoon" className="w-full h-auto object-cover" />
