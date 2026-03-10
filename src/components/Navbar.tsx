@@ -17,7 +17,12 @@ const Navbar = () => {
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      // Determine active section
+      // If at bottom of page, activate last section
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
+        setActiveSection(navItems[navItems.length - 1].href);
+        return;
+      }
+
       const sections = navItems.map((item) => item.href.slice(1));
       let current = "#home";
       for (const id of sections) {
