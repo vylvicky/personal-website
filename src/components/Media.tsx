@@ -223,16 +223,20 @@ const Media = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
           {/* Left column: Art */}
           <div>
-            <span className="inline-block px-3 py-1 rounded-md bg-accent/30 text-accent-foreground font-display font-bold text-xs uppercase tracking-widest mb-8">
+            <span className="inline-block px-3 py-1 rounded-md bg-accent/30 text-accent-foreground font-display font-bold text-xs uppercase tracking-widest mb-4">
               Cartoons
             </span>
+            <p className="flex items-start gap-2.5 text-sm text-muted-foreground font-body leading-relaxed mb-6">
+              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/70 flex-shrink-0" />
+              I regularly post hand-drawn, business-themed cartoons on LinkedIn.
+            </p>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              <div className="group rounded-xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5">
+              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7436786527990448128" target="_blank" rel="noopener noreferrer" className="group rounded-xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5">
                 <img src={cartoonWaymo} alt="Finance people hate the F1 key but love F1 cartoon" className="w-full h-auto object-cover" />
-              </div>
-              <div className="group rounded-xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5">
+              </a>
+              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7430110099236560896" target="_blank" rel="noopener noreferrer" className="group rounded-xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5">
                 <img src={cartoonCollars} alt="White collar layoffs cartoon" className="w-full h-auto object-cover" />
-              </div>
+              </a>
             </div>
           </div>
 
