@@ -246,7 +246,7 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 11 · Global Experience */}
-        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-3 row-span-1 bg-muted p-4 md:p-5 flex flex-col">
+        <BentoCard className="col-span-4 md:col-span-3 lg:col-span-3 row-span-1 bg-muted p-4 md:p-5 flex flex-col">
           <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70 mb-3"><Globe className="w-4 h-4 shrink-0" />Global Experience</span>
           <div className="flex items-center gap-2 my-auto">
             <span className="text-base" aria-label="United States">🇺🇸</span>
