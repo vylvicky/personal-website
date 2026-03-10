@@ -218,7 +218,7 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 7 · 261 Fearless — Nonprofit */}
-        <BentoCard className="col-span-2 md:col-span-2 row-span-1 bg-foreground p-5 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-2 lg:col-span-2 row-span-1 bg-foreground p-4 md:p-5 flex flex-col justify-between">
           <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60 mb-3"><Heart className="w-4 h-4 shrink-0" />FUNDRAISING</span>
           <LinkedLogo src={fearlessLogo} alt="261 Fearless" href="https://www.261fearless.org/" className="h-[48px] max-w-full w-auto object-contain invert mix-blend-lighten" />
           <p className="text-xs font-body text-muted/70 leading-snug mt-auto">2024 Boston Marathon charity team</p>
