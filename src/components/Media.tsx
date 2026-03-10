@@ -226,7 +226,7 @@ const Media = () => {
             <span className="inline-block px-3 py-1 rounded-md bg-accent/30 text-accent-foreground font-display font-bold text-xs uppercase tracking-widest mb-8">
               Cartoons
             </span>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <div className="group rounded-xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5">
                 <img src={cartoonWaymo} alt="Finance people hate the F1 key but love F1 cartoon" className="w-full h-auto object-cover" />
               </div>

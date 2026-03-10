@@ -4,9 +4,14 @@ import letteringWhite from "@/assets/lettering-white.svg";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen relative flex items-stretch">
+    <section id="home" className="min-h-screen relative flex flex-col md:flex-row items-stretch">
+      {/* Mobile photo - shown above intro on small screens */}
+      <div className="block md:hidden w-full h-[50vh] relative overflow-hidden">
+        <img src={aldrichPhoto} alt="Aldrich" className="absolute inset-0 w-full h-full object-cover object-top" />
+      </div>
+
       {/* Text overlay */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-12 lg:px-24 bg-foreground">
+      <div className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-12 lg:px-24 py-12 md:py-0 bg-foreground">
 
         <motion.img
           src={letteringWhite}
@@ -48,7 +53,7 @@ const Hero = () => {
 
       </div>
 
-      {/* Full-height photo */}
+      {/* Desktop photo */}
       <div className="hidden md:block w-[40%] lg:w-[45%] relative overflow-hidden">
         <img src={aldrichPhoto} alt="Aldrich" className="absolute inset-0 w-full h-full object-cover object-bottom" />
       </div>
