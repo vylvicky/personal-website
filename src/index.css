@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 213 22% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 22% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 22% 20%;
+
+    --primary: 27 97% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 193 52% 89%;
+    --secondary-foreground: 213 22% 20%;
+
+    --muted: 193 30% 94%;
+    --muted-foreground: 213 15% 40%;
+
+    --accent: 23 97% 33%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 193 20% 88%;
+    --input: 193 20% 88%;
+    --ring: 23 97% 23%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 193 30% 96%;
+    --sidebar-foreground: 213 22% 20%;
+    --sidebar-primary: 27 97% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 193 30% 94%;
+    --sidebar-accent-foreground: 213 22% 20%;
+    --sidebar-border: 193 20% 88%;
+    --sidebar-ring: 27 97% 38%;
+
+    --blush: 193 30% 94%;
+
+    --font-display: 'Outfit', system-ui, sans-serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+  }
+
+  .dark {
+    --background: 213 22% 10%;
+    --foreground: 193 30% 92%;
+    --card: 213 22% 13%;
+    --card-foreground: 193 30% 92%;
+    --popover: 213 22% 10%;
+    --popover-foreground: 193 30% 92%;
+    --primary: 27 97% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 193 40% 25%;
+    --secondary-foreground: 193 30% 92%;
+    --muted: 213 15% 18%;
+    --muted-foreground: 193 20% 60%;
+    --accent: 23 97% 40%;
+    --accent-foreground: 0 0% 100%;
+    --border: 213 15% 20%;
+    --input: 213 15% 20%;
+    --ring: 27 97% 45%;
+    --sidebar-background: 213 22% 12%;
+    --sidebar-foreground: 193 30% 90%;
+    --sidebar-primary: 27 97% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 213 15% 18%;
+    --sidebar-accent-foreground: 193 30% 90%;
+    --sidebar-border: 213 15% 20%;
+    --sidebar-ring: 27 97% 45%;
+    --blush: 213 15% 18%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Flip card */
+.flip-card {
+  perspective: 800px;
+}
+
+.flip-card-inner {
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Bento card hover */
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+.hover-scale:hover {
+  transform: scale(1.01);
+}
