@@ -139,7 +139,7 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 3 · Evercore — Investment Banking (Medium) */}
-        <BentoCard className="col-span-2 md:col-span-3 row-span-2 bg-background p-6 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-3 row-span-1 md:row-span-2 bg-background p-4 md:p-5 lg:p-6 flex flex-col justify-between">
           <div>
             <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70"><Landmark className="w-4 h-4 shrink-0" />Investment Banking</span>
             <div className="mt-5">
