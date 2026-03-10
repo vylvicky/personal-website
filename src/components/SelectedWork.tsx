@@ -262,7 +262,7 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 13 · Public Speaking */}
-        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-4 row-span-1 bg-background p-4 md:p-5 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-8 lg:col-span-4 row-span-1 bg-background p-4 md:p-5 flex flex-col justify-between">
           <div>
             <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70"><Mic className="w-4 h-4 shrink-0" />Public Speaking</span>
             <p className="text-sm font-body text-foreground/70 leading-relaxed mt-2">Former nationally ranked bilingual public speaker in Canada     </p>
