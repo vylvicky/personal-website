@@ -7,7 +7,7 @@ const Hero = () => {
     <section id="home" className="min-h-[100svh] relative flex flex-col md:flex-row items-stretch" style={{ minHeight: '-webkit-fill-available' }}>
       {/* Mobile photo - shown above intro on small screens */}
       <div className="block md:hidden w-full relative overflow-hidden" style={{ height: '50svh' }}>
-        <img src={aldrichPhoto} alt="Aldrich" className="absolute inset-0 w-full h-full object-cover" <img src={aldrichPhoto} alt="Aldrich" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: 'center 40%' }} /> />
+        <img src={aldrichPhoto} alt="Aldrich" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: 'center 40%' }} />
       </div>
 
       {/* Text overlay */}
