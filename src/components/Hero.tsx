@@ -7,7 +7,7 @@ const Hero = () => {
     <section id="home" className="min-h-screen relative flex flex-col md:flex-row items-stretch">
       {/* Mobile photo - shown above intro on small screens */}
       <div className="block md:hidden w-full h-[50vh] relative overflow-hidden">
-        <img src={aldrichPhoto} alt="Aldrich" className="absolute inset-0 w-full h-full object-cover object-top" />
+        <img src={aldrichPhoto} alt="Aldrich" className="absolute inset-0 w-full h-full object-cover object-[center_30%]" />
       </div>
 
       {/* Text overlay */}
