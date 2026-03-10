@@ -235,7 +235,7 @@ const SelectedWork = () => {
         <BentoCard className="col-span-4 md:col-span-2 lg:col-span-2 row-span-1 bg-background p-4 md:p-5 flex flex-col justify-between">
           <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70 mb-3"><Palette className="w-4 h-4 shrink-0" />Culture</span>
           <LinkedLogo src={afLogo} alt="Alliance Française" href="https://www.afscv.org/" className="h-[48px] max-w-full w-auto object-contain mix-blend-multiply" />
-          <p className="text-sm font-body text-muted-foreground leading-relaxed mt-auto">Board member</p>
+          <p className="text-sm font-body text-muted-foreground leading-relaxed mt-auto">Former board member</p>
         </BentoCard>
 
         {/* 10 · Louisville Metro — Government */}
