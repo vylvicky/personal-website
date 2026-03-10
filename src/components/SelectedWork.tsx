@@ -211,7 +211,7 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 6 · RCM — Music Theory */}
-        <BentoCard className="col-span-2 md:col-span-2 row-span-1 bg-background p-5 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-2 lg:col-span-2 row-span-1 bg-background p-4 md:p-5 flex flex-col justify-between">
           <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70 mb-3"><Music className="w-4 h-4 shrink-0" />Music</span>
           <LinkedLogo src={rcmLogo} alt="Royal Conservatory of Music" href="https://www.rcmusic.com/" className="h-[48px] max-w-full w-auto object-contain" />
           <p className="text-xs font-body text-muted-foreground leading-snug mt-auto">Pianist and music theory teacher</p>
