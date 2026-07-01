@@ -245,7 +245,7 @@ const Media = () => {
           {/* Right column: Other Publications */}
           <div>
             <span className="inline-block px-3 py-1 rounded-md bg-secondary/25 text-secondary-foreground font-display font-bold text-xs uppercase tracking-widest mb-8">
-              Other Writing
+              OTHER
             </span>
             <ul className="space-y-4">
               <li className="flex items-start gap-2.5 text-sm text-muted-foreground font-body leading-relaxed">
