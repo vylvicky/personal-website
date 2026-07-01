@@ -262,6 +262,13 @@ const Media = () => {
                   <a href="https://www.cbc.ca/2017/whatsyourstory/what-s-your-story-yearbook-116-profiles-279-photographs-220-pages-1.4384182" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">What's Your Story? Raconte Ton Histoire</a>, CBC/Radio-Canada's personal story anthology for the 150th anniversary of Canadian confederation
                 </span>
               </li>
+              <li className="flex items-start gap-2.5 text-sm text-muted-foreground font-body leading-relaxed">
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/70 flex-shrink-0" />
+                <span>
+                  Check out my vibe coding projects on{" "}
+                  <a href="https://github.com/vylvicky" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Github</a>
+                </span>
+              </li>
             </ul>
           </div>
         </div>
