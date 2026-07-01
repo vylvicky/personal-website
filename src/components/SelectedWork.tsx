@@ -252,6 +252,7 @@ const SelectedWork = () => {
             <span className="text-base" aria-label="United States">🇺🇸</span>
             <span className="text-base" aria-label="Germany">🇩🇪</span>
             <span className="text-base" aria-label="Sweden">🇸🇪</span>
+            <span className="text-base" aria-label="France">🇫🇷</span>
           </div>
         </BentoCard>
 
