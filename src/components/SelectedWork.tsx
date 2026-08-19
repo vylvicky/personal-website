@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Globe, Languages, TrendingUp, Rocket, Landmark, GraduationCap, Building2, Mic, Music, Heart, Briefcase, Palette } from "lucide-react";
+import { Globe, Languages, TrendingUp, Rocket, Landmark, GraduationCap, Building2, Mic, Music, Heart, Briefcase, Palette, X } from "lucide-react";
 
 import summitLogo from "@/assets/logos/summit-partners.png";
 import stackadaptLogo from "@/assets/logos/stackadapt.png";
@@ -64,8 +65,31 @@ const LinkedLogo = ({ src, alt, href, className = "" }: {src: string;alt: string
   <img src={src} alt={alt} className={`object-contain ${className}`} />
 </a>;
 
+const SanaCardContent = ({ compact = false }: { compact?: boolean }) => (
+  <div className={`flex flex-col ${compact ? "gap-2" : "justify-between h-full gap-3"}`}>
+    <div>
+      <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60">
+        <Rocket className="w-4 h-4 shrink-0" />Startup Operations
+      </span>
+      <div className={`${compact ? "mt-2" : "mt-5"}`}>
+        <LinkedLogo src={sanaLogo} alt="Sana" href="https://sanalabs.com/" className={`w-auto brightness-0 invert ${compact ? "h-8 md:h-10" : "h-12 md:h-18"}`} />
+      </div>
+    </div>
+    <div className={`space-y-1.5 ${compact ? "" : "mt-auto"}`}>
+      <p className="text-sm font-body text-muted/70 leading-relaxed">Built and scaled go-to-market systems at an AI learning platform</p>
+      <div className="flex items-center gap-1.5">
+        <p className="text-sm font-body text-primary font-semibold leading-relaxed">Acquired by</p>
+        <LinkedLogo src={workdayLogo} alt="Workday" href="https://newsroom.workday.com/2025-11-04-Workday-Completes-Acquisition-of-Sana" className="h-6 w-auto" />
+      </div>
+    </div>
+  </div>
+);
+
 
 const SelectedWork = () => {
+  const [sanaHover, setSanaHover] = useState(false);
+  const [sanaOverlayOpen, setSanaOverlayOpen] = useState(false);
+
   return (
     <section id="work" className="relative py-28 px-6 md:px-12 lg:px-24 bg-secondary">
       <motion.h2
@@ -82,7 +106,7 @@ const SelectedWork = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-base text-muted-foreground font-body mb-16">I've led $10B+ in transactions as an investor and advisor. I've also designed and sold print magazine ads, scaled online fan communities, and performed poetry and comedy on stage. Excited for what's to come!  
+        className="text-base text-muted-foreground font-body mb-16">I've led $10B+ in transactions as an investor and advisor. I've also designed and sold print magazine ads, scaled online fan communities, and performed poetry and comedy on stage. Excited for what's to come!  
 
 
       </motion.p>
@@ -94,8 +118,27 @@ const SelectedWork = () => {
         viewport={{ once: true, margin: "-60px" }}
         className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 auto-rows-auto lg:auto-rows-[160px] gap-3 md:gap-4 lg:gap-5">
 
-        {/* 1 · Summit Partners — Growth Equity (Large) */}
-        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-6 row-span-1 md:row-span-2 bg-muted p-5 md:p-6 lg:p-8 flex flex-col justify-between">
+        {/* 1 · Startup Operations — Sana + TBD (Large) */}
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-6 row-span-1 md:row-span-2 bg-foreground text-primary-foreground p-4 md:p-5 lg:p-6">
+          <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 h-full">
+            <div className="lg:w-1/2 flex flex-col justify-between">
+              <SanaCardContent />
+            </div>
+            <div className="lg:w-1/2 flex flex-col gap-4 justify-center">
+              <div>
+                <p className="text-[10px] font-display font-bold uppercase tracking-widest text-muted/50 mb-1.5">Post-MBA Role</p>
+                <p className="text-sm font-body text-muted/70 leading-relaxed">TBD</p>
+              </div>
+              <div>
+                <p className="text-[10px] font-display font-bold uppercase tracking-widest text-muted/50 mb-1.5">Internship</p>
+                <p className="text-sm font-body text-muted/70 leading-relaxed">TBD</p>
+              </div>
+            </div>
+          </div>
+        </BentoCard>
+
+        {/* 2 · Growth Equity — Summit Partners (Medium) */}
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-3 row-span-1 md:row-span-2 bg-muted p-4 md:p-5 lg:p-6 flex flex-col justify-between">
           <div>
             <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70"><TrendingUp className="w-4 h-4 shrink-0" />Growth Equity</span>
             <div className="mt-5">
@@ -104,7 +147,7 @@ const SelectedWork = () => {
           </div>
           <div className="mt-auto space-y-4">
             <p className="text-sm font-body text-foreground/70 leading-relaxed">Sourced and executed technology investments</p>
-            <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+            <div className="flex flex-col gap-4">
               <div className="flex flex-col">
                 <p className="text-[10px] font-display font-bold uppercase tracking-widest text-foreground/50 mb-1.5">Select Investments</p>
                 <div className="h-9 flex items-center">
@@ -117,23 +160,6 @@ const SelectedWork = () => {
                   <LinkedLogo src={rnlLogo} alt="Ruffalo Noel Levitz" href="https://www.summitpartners.com/companies/ruffalo-noel-levitz" className="h-9 w-auto mix-blend-multiply" />
                 </div>
               </div>
-            </div>
-          </div>
-        </BentoCard>
-
-        {/* 2 · Sana — Startup Ops (Medium) */}
-        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-3 row-span-1 md:row-span-2 bg-foreground text-primary-foreground p-4 md:p-5 lg:p-6 flex flex-col justify-between">
-          <div>
-            <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60"><Rocket className="w-4 h-4 shrink-0" />Startup Operations</span>
-            <div className="mt-5">
-              <LinkedLogo src={sanaLogo} alt="Sana" href="https://sanalabs.com/" className="h-12 md:h-18 w-auto brightness-0 invert" />
-            </div>
-          </div>
-          <div className="mt-auto space-y-1.5">
-            <p className="text-sm font-body text-muted/70 leading-relaxed">Built and scaled go-to-market systems at an AI learning platform</p>
-            <div className="flex items-center gap-1.5">
-              <p className="text-sm font-body text-primary font-semibold leading-relaxed">Acquired by</p>
-              <LinkedLogo src={workdayLogo} alt="Workday" href="https://newsroom.workday.com/2025-11-04-Workday-Completes-Acquisition-of-Sana" className="h-6 w-auto" />
             </div>
           </div>
         </BentoCard>
@@ -176,7 +202,7 @@ const SelectedWork = () => {
             </div>
           </div>
           <div className="mt-auto space-y-3">
-            <p className="text-sm font-body text-muted/70 leading-relaxed">​Master in Business Administration with First-Year Honors       </p>
+            <p className="text-sm font-body text-muted/70 leading-relaxed">Master in Business Administration with First-Year Honors       </p>
             <div>
               <p className="text-[10px] font-display font-bold uppercase tracking-widest text-muted/50 mb-1.5">Advisory Projects</p>
               <div className="flex items-center gap-3">
@@ -246,14 +272,60 @@ const SelectedWork = () => {
         </BentoCard>
 
         {/* 11 · Global Experience */}
-        <BentoCard className="col-span-4 md:col-span-3 lg:col-span-3 row-span-1 bg-muted p-4 md:p-5 flex flex-col">
+        <BentoCard className="col-span-4 md:col-span-3 lg:col-span-3 row-span-1 bg-muted p-4 md:p-5 flex flex-col overflow-visible">
           <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70 mb-3"><Globe className="w-4 h-4 shrink-0" />Global Experience</span>
           <div className="flex items-center gap-2 my-auto">
             <span className="text-base" aria-label="Canada">🇨🇦</span>
             <span className="text-base" aria-label="United States">🇺🇸</span>
             <span className="text-base" aria-label="France">🇫🇷</span>
             <span className="text-base" aria-label="Germany">🇩🇪</span>
-            <span className="text-base" aria-label="Sweden">🇸🇪</span>
+            <div className="relative inline-flex">
+              <button
+                className="inline-flex p-0 bg-transparent border-0 hover:scale-125 transition-transform focus:outline-none"
+                onMouseEnter={() => setSanaHover(true)}
+                onMouseLeave={() => setSanaHover(false)}
+                onClick={() => setSanaOverlayOpen((open) => !open)}
+                aria-label="Sweden — hover or click to see Sana experience"
+                aria-expanded={sanaOverlayOpen}
+              >
+                <span className="text-base" aria-hidden="true">🇸🇪</span>
+              </button>
+
+              {/* Hover bridge to keep overlay visible while moving cursor from flag to overlay */}
+              <div
+                className="absolute bottom-full left-1/2 -translate-x-1/2 w-[220px] md:w-[280px] h-1 z-40"
+                onMouseEnter={() => setSanaHover(true)}
+                onMouseLeave={() => setSanaHover(false)}
+                aria-hidden="true"
+              />
+
+              {/* Sana overlay */}
+              <div
+                className={`
+                  absolute bottom-full left-1/2 -translate-x-1/2 mb-1
+                  w-[220px] md:w-[280px]
+                  rounded-2xl bg-foreground text-primary-foreground p-4
+                  shadow-2xl border border-primary-foreground/10
+                  flex flex-col justify-between
+                  ${sanaHover || sanaOverlayOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}
+                  transition-all duration-300 z-50
+                `}
+                onMouseEnter={() => setSanaHover(true)}
+                onMouseLeave={() => setSanaHover(false)}
+                aria-hidden={!sanaOverlayOpen}
+              >
+                <SanaCardContent compact />
+                {sanaOverlayOpen && (
+                  <button
+                    onClick={() => setSanaOverlayOpen(false)}
+                    className="absolute top-2 right-2 p-1.5 rounded-md text-muted/60 hover:text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
+                    aria-label="Close Sana card"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         </BentoCard>
 
