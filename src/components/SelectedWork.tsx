@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Globe, Languages, TrendingUp, Rocket, Landmark, GraduationCap, Building2, Mic, Music, Heart, Briefcase, Palette, X } from "lucide-react";
 
-import summitLogo from "@/assets/logos/summit-partners.png";
 import stackadaptLogo from "@/assets/logos/stackadapt.png";
 import rnlLogo from "@/assets/logos/ruffalo-noel-levitz.png";
 import sanaLogo from "@/assets/logos/sana.png";
@@ -49,9 +48,9 @@ interface BentoCardProps {
 }
 
 const BentoCard = ({ className = "", children }: BentoCardProps) =>
-<motion.div
-  variants={item}
-  className={`group relative rounded-3xl border border-border/60 backdrop-blur-md overflow-hidden hover-scale cursor-default ${className}`}>
+  <motion.div
+    variants={item}
+    className={`group relative rounded-3xl border border-border/60 backdrop-blur-md overflow-hidden hover-scale cursor-default ${className}`}>
 
     {children}
   </motion.div>;
@@ -65,24 +64,41 @@ const LinkedLogo = ({ src, alt, href, className = "" }: {src: string;alt: string
   <img src={src} alt={alt} className={`object-contain ${className}`} />
 </a>;
 
-const SanaCardContent = ({ compact = false }: { compact?: boolean }) => (
+const SanaCardContent = ({ compact = false, variant = "dark" }: { compact?: boolean; variant?: "dark" | "grey" }) => {
+  const isGrey = variant === "grey";
+  return (
+    <div className={`flex flex-col ${compact ? "gap-2" : "justify-between h-full gap-3"}`}>
+      <div>
+        <span className={`flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest ${isGrey ? "text-foreground/70" : "text-muted-foreground/70"}`}>
+          <Rocket className="w-4 h-4 shrink-0" />Startup Operations
+        </span>
+        <div className={`${compact ? "mt-2" : "mt-5"}`}>
+          <LinkedLogo src={sanaLogo} alt="Sana" href="https://sanalabs.com/" className={`w-auto ${isGrey ? "brightness-0 dark:invert" : "brightness-0 invert"} ${compact ? "h-8 md:h-10" : "h-12 md:h-18"}`} />
+        </div>
+      </div>
+      <div className={`space-y-1.5 ${compact ? "" : "mt-auto"}`}>
+        <p className={`text-sm font-body leading-relaxed ${isGrey ? "text-muted-foreground" : "text-muted-foreground"}`}>Built and scaled go-to-market systems at an AI learning platform</p>
+        <div className="flex items-center gap-1.5">
+          <p className={`text-sm font-body font-semibold leading-relaxed ${isGrey ? "text-foreground/70" : "text-muted-foreground"}`}>Acquired by</p>
+          <LinkedLogo src={workdayLogo} alt="Workday" href="https://newsroom.workday.com/2025-11-04-Workday-Completes-Acquisition-of-Sana" className={`h-6 w-auto ${isGrey ? "brightness-0 dark:invert" : "brightness-0 invert"}`} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const CafeynCardContent = ({ compact = false }: { compact?: boolean }) => (
   <div className={`flex flex-col ${compact ? "gap-2" : "justify-between h-full gap-3"}`}>
     <div>
-      <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60">
-        <Rocket className="w-4 h-4 shrink-0" />Startup Operations
+      <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70">
+        <Globe className="w-4 h-4 shrink-0" />Digital Media
       </span>
       <div className={`${compact ? "mt-2" : "mt-5"}`}>
-        <LinkedLogo src={sanaLogo} alt="Sana" href="https://sanalabs.com/" className={`w-auto brightness-0 invert ${compact ? "h-8 md:h-10" : "h-12 md:h-18"}`} />
+        <LinkedLogo src="https://milcom.ccrlcm.fr/vendors/richfilemanager/connectors/php/filemanager.php?mode=readfile&path=%2FRESSOURCES_NUM_2025%2Flogo_cafeyn_2025cut.PNG&time=1750861478102" alt="Cafeyn" href="https://www.cafeyn.com/" className={`w-auto ${compact ? "h-8 md:h-10" : "h-12 md:h-18"}`} />
       </div>
     </div>
-    <div className={`space-y-1.5 ${compact ? "" : "mt-auto"}`}>
-      <p className="text-sm font-body text-muted/70 leading-relaxed">Built and scaled go-to-market systems at an AI learning platform</p>
-      <div className="flex items-center gap-1.5">
-        <p className="text-sm font-body text-primary font-semibold leading-relaxed">Acquired by</p>
-        <LinkedLogo src={workdayLogo} alt="Workday" href="https://newsroom.workday.com/2025-11-04-Workday-Completes-Acquisition-of-Sana" className="h-6 w-auto" />
-      </div>
-    </div>
-</div>
+    <p className={`text-sm font-body text-muted-foreground leading-relaxed ${compact ? "" : "mt-auto"}`}>Led strategic projects for Europe's leading platform for digital press</p>
+  </div>
 );
 
 const CafeynCardContent = ({ compact = false }: { compact?: boolean }) => (
@@ -134,45 +150,45 @@ const SelectedWork = () => {
         className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 auto-rows-auto lg:auto-rows-[160px] gap-3 md:gap-4 lg:gap-5">
 
         {/* 1 · Startup Operations — Sana + TBD (Large) */}
-        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-6 row-span-1 md:row-span-2 bg-foreground text-primary-foreground p-4 md:p-5 lg:p-6">
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-6 row-span-1 md:row-span-2 bg-muted p-4 md:p-5 lg:p-6">
           <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 h-full">
             <div className="lg:w-1/2 flex flex-col justify-between">
-              <SanaCardContent />
+              <SanaCardContent variant="grey" />
             </div>
             <div className="lg:w-1/2 flex flex-col gap-4 justify-center">
               <div>
-                <p className="text-[10px] font-display font-bold uppercase tracking-widest text-muted/50 mb-1.5">Post-MBA Role</p>
-                <p className="text-sm font-body text-muted/70 leading-relaxed">TBD</p>
+                <p className="text-[10px] font-display font-bold uppercase tracking-widest text-foreground/50 mb-1.5">Post-MBA Role</p>
+                <p className="text-sm font-body text-muted-foreground leading-relaxed">TBD</p>
               </div>
               <div>
-                <p className="text-[10px] font-display font-bold uppercase tracking-widest text-muted/50 mb-1.5">Internship</p>
-                <p className="text-sm font-body text-muted/70 leading-relaxed">TBD</p>
+                <p className="text-[10px] font-display font-bold uppercase tracking-widest text-foreground/50 mb-1.5">Internship</p>
+                <p className="text-sm font-body text-muted-foreground leading-relaxed">TBD</p>
               </div>
             </div>
           </div>
         </BentoCard>
 
         {/* 2 · Growth Equity — Summit Partners (Medium) */}
-        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-3 row-span-1 md:row-span-2 bg-muted p-4 md:p-5 lg:p-6 flex flex-col justify-between">
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-3 row-span-1 md:row-span-2 bg-foreground text-primary-foreground p-4 md:p-5 lg:p-6 flex flex-col justify-between">
           <div>
-            <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70"><TrendingUp className="w-4 h-4 shrink-0" />Growth Equity</span>
+            <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted-foreground/70"><TrendingUp className="w-4 h-4 shrink-0" />Growth Equity</span>
             <div className="mt-5">
-              <LinkedLogo src={summitLogo} alt="Summit Partners" href="https://www.summitpartners.com/" className="h-12 md:h-18 w-auto" />
+              <LinkedLogo src="/assets/logos/summit-partners.svg" alt="Summit Partners" href="https://www.summitpartners.com/" className="h-12 md:h-18 w-auto" />
             </div>
           </div>
           <div className="mt-auto space-y-4">
-            <p className="text-sm font-body text-foreground/70 leading-relaxed">Sourced and executed technology investments</p>
+            <p className="text-sm font-body text-muted-foreground leading-relaxed">Sourced and executed technology investments</p>
             <div className="flex flex-col gap-4">
               <div className="flex flex-col">
-                <p className="text-[10px] font-display font-bold uppercase tracking-widest text-foreground/50 mb-1.5">Select Investments</p>
+                <p className="text-[10px] font-display font-bold uppercase tracking-widest text-muted-foreground/50 mb-1.5">Select Investments</p>
                 <div className="h-9 flex items-center">
-                  <LinkedLogo src={stackadaptLogo} alt="StackAdapt" href="https://www.summitpartners.com/companies/stackadapt" className="h-6 w-auto mix-blend-multiply" />
+                  <LinkedLogo src={stackadaptLogo} alt="StackAdapt" href="https://www.summitpartners.com/companies/stackadapt" className="h-6 w-auto invert" />
                 </div>
               </div>
               <div className="flex flex-col">
-                <p className="text-[10px] font-display font-bold uppercase tracking-widest text-foreground/50 mb-1.5">Portfolio Management</p>
+                <p className="text-[10px] font-display font-bold uppercase tracking-widest text-muted-foreground/50 mb-1.5">Portfolio Management</p>
                 <div className="h-9 flex items-center">
-                  <LinkedLogo src={rnlLogo} alt="Ruffalo Noel Levitz" href="https://www.summitpartners.com/companies/ruffalo-noel-levitz" className="h-9 w-auto mix-blend-multiply" />
+                  <LinkedLogo src={rnlLogo} alt="Ruffalo Noel Levitz" href="https://www.summitpartners.com/companies/ruffalo-noel-levitz" className="h-9 w-auto invert" />
                 </div>
               </div>
             </div>
