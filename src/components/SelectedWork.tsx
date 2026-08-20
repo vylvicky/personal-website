@@ -82,13 +82,28 @@ const SanaCardContent = ({ compact = false }: { compact?: boolean }) => (
         <LinkedLogo src={workdayLogo} alt="Workday" href="https://newsroom.workday.com/2025-11-04-Workday-Completes-Acquisition-of-Sana" className="h-6 w-auto" />
       </div>
     </div>
-  </div>
+</div>
 );
 
+const CafeynCardContent = ({ compact = false }: { compact?: boolean }) => (
+  <div className={`flex flex-col ${compact ? "gap-2" : "justify-between h-full gap-3"}`}>
+    <div>
+      <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60">
+        <Globe className="w-4 h-4 shrink-0" />Digital Media
+      </span>
+      <div className={`${compact ? "mt-2" : "mt-5"}`}>
+        <LinkedLogo src="https://milcom.ccrlcm.fr/vendors/richfilemanager/connectors/php/filemanager.php?mode=readfile&path=%2FRESSOURCES_NUM_2025%2Flogo_cafeyn_2025cut.PNG&time=1750861478102" alt="Cafeyn" href="https://www.cafeyn.com/" className={`w-auto ${compact ? "h-8 md:h-10" : "h-12 md:h-18"}`} />
+      </div>
+    </div>
+    <p className={`text-sm font-body text-muted/70 leading-relaxed ${compact ? "" : "mt-auto"}`}>Led strategic projects for Europe's leading platform for digital press</p>
+  </div>
+);
 
 const SelectedWork = () => {
   const [sanaHover, setSanaHover] = useState(false);
   const [sanaOverlayOpen, setSanaOverlayOpen] = useState(false);
+  const [frenchHover, setFrenchHover] = useState(false);
+  const [frenchOverlayOpen, setFrenchOverlayOpen] = useState(false);
 
   return (
     <section id="work" className="relative py-28 px-6 md:px-12 lg:px-24 bg-secondary">
@@ -277,7 +292,53 @@ const SelectedWork = () => {
           <div className="flex items-center gap-2 my-auto">
             <span className="text-base" aria-label="Canada">🇨🇦</span>
             <span className="text-base" aria-label="United States">🇺🇸</span>
-            <span className="text-base" aria-label="France">🇫🇷</span>
+            <div className="relative inline-flex">
+              <button
+                className="inline-flex p-0 bg-transparent border-0 hover:scale-125 transition-transform focus:outline-none"
+                onMouseEnter={() => setFrenchHover(true)}
+                onMouseLeave={() => setFrenchHover(false)}
+                onClick={() => setFrenchOverlayOpen((open) => !open)}
+                aria-label="France — hover or click to see Cafeyn experience"
+                aria-expanded={frenchOverlayOpen}
+              >
+                <span className="text-base" aria-hidden="true">🇫🇷</span>
+              </button>
+
+              {/* Hover bridge to keep overlay visible while moving cursor from flag to overlay */}
+              <div
+                className="absolute bottom-full left-1/2 -translate-x-1/2 w-[220px] md:w-[280px] h-1 z-40"
+                onMouseEnter={() => setFrenchHover(true)}
+                onMouseLeave={() => setFrenchHover(false)}
+                aria-hidden="true"
+              />
+
+              {/* Cafeyn overlay */}
+              <div
+                className={`
+                  absolute bottom-full left-1/2 -translate-x-1/2 mb-1
+                  w-[220px] md:w-[280px]
+                  rounded-2xl bg-foreground text-primary-foreground p-4
+                  shadow-2xl border border-primary-foreground/10
+                  flex flex-col justify-between
+                  ${frenchHover || frenchOverlayOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}
+                  transition-all duration-300 z-50
+                `}
+                onMouseEnter={() => setFrenchHover(true)}
+                onMouseLeave={() => setFrenchHover(false)}
+                aria-hidden={!frenchOverlayOpen}
+              >
+                <CafeynCardContent compact />
+                {frenchOverlayOpen && (
+                  <button
+                    onClick={() => setFrenchOverlayOpen(false)}
+                    className="absolute top-2 right-2 p-1.5 rounded-md text-muted/60 hover:text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
+                    aria-label="Close Cafeyn card"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                )}
+              </div>
+            </div>
             <span className="text-base" aria-label="Germany">🇩🇪</span>
             <div className="relative inline-flex">
               <button
