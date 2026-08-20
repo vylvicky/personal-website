@@ -88,14 +88,14 @@ const SanaCardContent = ({ compact = false }: { compact?: boolean }) => (
 const CafeynCardContent = ({ compact = false }: { compact?: boolean }) => (
   <div className={`flex flex-col ${compact ? "gap-2" : "justify-between h-full gap-3"}`}>
     <div>
-      <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60">
+      <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70">
         <Globe className="w-4 h-4 shrink-0" />Digital Media
       </span>
       <div className={`${compact ? "mt-2" : "mt-5"}`}>
         <LinkedLogo src="https://milcom.ccrlcm.fr/vendors/richfilemanager/connectors/php/filemanager.php?mode=readfile&path=%2FRESSOURCES_NUM_2025%2Flogo_cafeyn_2025cut.PNG&time=1750861478102" alt="Cafeyn" href="https://www.cafeyn.com/" className={`w-auto ${compact ? "h-8 md:h-10" : "h-12 md:h-18"}`} />
       </div>
     </div>
-    <p className={`text-sm font-body text-muted/70 leading-relaxed ${compact ? "" : "mt-auto"}`}>Led strategic projects for Europe's leading platform for digital press</p>
+    <p className={`text-sm font-body text-muted-foreground leading-relaxed ${compact ? "" : "mt-auto"}`}>Led strategic projects for Europe's leading platform for digital press</p>
   </div>
 );
 
@@ -317,8 +317,8 @@ const SelectedWork = () => {
                 className={`
                   absolute bottom-full left-1/2 -translate-x-1/2 mb-1
                   w-[220px] md:w-[280px]
-                  rounded-2xl bg-foreground text-primary-foreground p-4
-                  shadow-2xl border border-primary-foreground/10
+                  rounded-2xl bg-background text-foreground p-4
+                  shadow-2xl border border-border/60
                   flex flex-col justify-between
                   ${frenchHover || frenchOverlayOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}
                   transition-all duration-300 z-50
@@ -331,7 +331,7 @@ const SelectedWork = () => {
                 {frenchOverlayOpen && (
                   <button
                     onClick={() => setFrenchOverlayOpen(false)}
-                    className="absolute top-2 right-2 p-1.5 rounded-md text-muted/60 hover:text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
+                    className="absolute top-2 right-2 p-1.5 rounded-md text-foreground/60 hover:text-foreground hover:bg-foreground/10 transition-colors"
                     aria-label="Close Cafeyn card"
                   >
                     <X className="w-4 h-4" />
