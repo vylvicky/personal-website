@@ -292,7 +292,53 @@ const SelectedWork = () => {
           <div className="flex items-center gap-2 my-auto">
             <span className="text-base" aria-label="Canada">🇨🇦</span>
             <span className="text-base" aria-label="United States">🇺🇸</span>
-            <span className="text-base" aria-label="France">🇫🇷</span>
+            <div className="relative inline-flex">
+              <button
+                className="inline-flex p-0 bg-transparent border-0 hover:scale-125 transition-transform focus:outline-none"
+                onMouseEnter={() => setFrenchHover(true)}
+                onMouseLeave={() => setFrenchHover(false)}
+                onClick={() => setFrenchOverlayOpen((open) => !open)}
+                aria-label="France — hover or click to see Cafeyn experience"
+                aria-expanded={frenchOverlayOpen}
+              >
+                <span className="text-base" aria-hidden="true">🇫🇷</span>
+              </button>
+
+              {/* Hover bridge to keep overlay visible while moving cursor from flag to overlay */}
+              <div
+                className="absolute bottom-full left-1/2 -translate-x-1/2 w-[220px] md:w-[280px] h-1 z-40"
+                onMouseEnter={() => setFrenchHover(true)}
+                onMouseLeave={() => setFrenchHover(false)}
+                aria-hidden="true"
+              />
+
+              {/* Cafeyn overlay */}
+              <div
+                className={`
+                  absolute bottom-full left-1/2 -translate-x-1/2 mb-1
+                  w-[220px] md:w-[280px]
+                  rounded-2xl bg-foreground text-primary-foreground p-4
+                  shadow-2xl border border-primary-foreground/10
+                  flex flex-col justify-between
+                  ${frenchHover || frenchOverlayOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}
+                  transition-all duration-300 z-50
+                `}
+                onMouseEnter={() => setFrenchHover(true)}
+                onMouseLeave={() => setFrenchHover(false)}
+                aria-hidden={!frenchOverlayOpen}
+              >
+                <CafeynCardContent compact />
+                {frenchOverlayOpen && (
+                  <button
+                    onClick={() => setFrenchOverlayOpen(false)}
+                    className="absolute top-2 right-2 p-1.5 rounded-md text-muted/60 hover:text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
+                    aria-label="Close Cafeyn card"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                )}
+              </div>
+            </div>
             <span className="text-base" aria-label="Germany">🇩🇪</span>
             <div className="relative inline-flex">
               <button
