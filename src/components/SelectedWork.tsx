@@ -82,13 +82,28 @@ const SanaCardContent = ({ compact = false }: { compact?: boolean }) => (
         <LinkedLogo src={workdayLogo} alt="Workday" href="https://newsroom.workday.com/2025-11-04-Workday-Completes-Acquisition-of-Sana" className="h-6 w-auto" />
       </div>
     </div>
-  </div>
+</div>
 );
 
+const CafeynCardContent = ({ compact = false }: { compact?: boolean }) => (
+  <div className={`flex flex-col ${compact ? "gap-2" : "justify-between h-full gap-3"}`}>
+    <div>
+      <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60">
+        <Globe className="w-4 h-4 shrink-0" />Digital Media
+      </span>
+      <div className={`${compact ? "mt-2" : "mt-5"}`}>
+        <LinkedLogo src="https://milcom.ccrlcm.fr/vendors/richfilemanager/connectors/php/filemanager.php?mode=readfile&path=%2FRESSOURCES_NUM_2025%2Flogo_cafeyn_2025cut.PNG&time=1750861478102" alt="Cafeyn" href="https://www.cafeyn.com/" className={`w-auto ${compact ? "h-8 md:h-10" : "h-12 md:h-18"}`} />
+      </div>
+    </div>
+    <p className={`text-sm font-body text-muted/70 leading-relaxed ${compact ? "" : "mt-auto"}`}>Led strategic projects for Europe's leading platform for digital press</p>
+  </div>
+);
 
 const SelectedWork = () => {
   const [sanaHover, setSanaHover] = useState(false);
   const [sanaOverlayOpen, setSanaOverlayOpen] = useState(false);
+  const [frenchHover, setFrenchHover] = useState(false);
+  const [frenchOverlayOpen, setFrenchOverlayOpen] = useState(false);
 
   return (
     <section id="work" className="relative py-28 px-6 md:px-12 lg:px-24 bg-secondary">
