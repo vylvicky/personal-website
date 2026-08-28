@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Globe, Languages, TrendingUp, Rocket, Landmark, GraduationCap, Building2, Mic, Music, Heart, Briefcase, Palette, X } from "lucide-react";
+import { Globe, Languages, TrendingUp, Rocket, Landmark, GraduationCap, Building2, Mic, Music, Heart, Briefcase, Palette, Scale, X } from "lucide-react";
 
 import summitLogo from "@/assets/logos/summit-partners.png";
 import stackadaptLogo from "@/assets/logos/stackadapt.png";
@@ -99,11 +99,27 @@ const CafeynCardContent = ({ compact = false }: { compact?: boolean }) => (
   </div>
 );
 
+const GermanCardContent = ({ compact = false }: { compact?: boolean }) => (
+  <div className={`flex flex-col ${compact ? "gap-2" : "justify-between h-full gap-3"}`}>
+    <div>
+      <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-foreground/70">
+        <Scale className="w-4 h-4 shrink-0" />Intellectual Property Law
+      </span>
+      <div className={`${compact ? "mt-2" : "mt-5"}`}>
+        <LinkedLogo src="https://leinweber-zimmermann.com/images/logo.svg" alt="Leinweber Zimmermann" href="https://leinweber-zimmermann.com/" className={`w-auto ${compact ? "h-8 md:h-10" : "h-12 md:h-18"}`} />
+      </div>
+    </div>
+    <p className={`text-sm font-body text-muted-foreground leading-relaxed ${compact ? "" : "mt-auto"}`}>Drafted arguments to defend patent applications</p>
+  </div>
+);
+
 const SelectedWork = () => {
   const [sanaHover, setSanaHover] = useState(false);
   const [sanaOverlayOpen, setSanaOverlayOpen] = useState(false);
   const [frenchHover, setFrenchHover] = useState(false);
   const [frenchOverlayOpen, setFrenchOverlayOpen] = useState(false);
+  const [germanHover, setGermanHover] = useState(false);
+  const [germanOverlayOpen, setGermanOverlayOpen] = useState(false);
 
   return (
     <section id="work" className="relative py-28 px-6 md:px-12 lg:px-24 bg-secondary">
@@ -339,7 +355,53 @@ const SelectedWork = () => {
                 )}
               </div>
             </div>
-            <span className="text-base" aria-label="Germany">🇩🇪</span>
+            <div className="relative inline-flex">
+              <button
+                className="inline-flex p-0 bg-transparent border-0 hover:scale-125 transition-transform focus:outline-none"
+                onMouseEnter={() => setGermanHover(true)}
+                onMouseLeave={() => setGermanHover(false)}
+                onClick={() => setGermanOverlayOpen((open) => !open)}
+                aria-label="Germany — hover or click to see IP law experience"
+                aria-expanded={germanOverlayOpen}
+              >
+                <span className="text-base" aria-hidden="true">🇩🇪</span>
+              </button>
+
+              {/* Hover bridge to keep overlay visible while moving cursor from flag to overlay */}
+              <div
+                className="absolute bottom-full left-1/2 -translate-x-1/2 w-[220px] md:w-[280px] h-1 z-40"
+                onMouseEnter={() => setGermanHover(true)}
+                onMouseLeave={() => setGermanHover(false)}
+                aria-hidden="true"
+              />
+
+              {/* German overlay */}
+              <div
+                className={`
+                  absolute bottom-full left-1/2 -translate-x-1/2 mb-1
+                  w-[220px] md:w-[280px]
+                  rounded-2xl bg-background text-foreground p-4
+                  shadow-2xl border border-border/60
+                  flex flex-col justify-between
+                  ${germanHover || germanOverlayOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}
+                  transition-all duration-300 z-50
+                `}
+                onMouseEnter={() => setGermanHover(true)}
+                onMouseLeave={() => setGermanHover(false)}
+                aria-hidden={!germanOverlayOpen}
+              >
+                <GermanCardContent compact />
+                {germanOverlayOpen && (
+                  <button
+                    onClick={() => setGermanOverlayOpen(false)}
+                    className="absolute top-2 right-2 p-1.5 rounded-md text-foreground/60 hover:text-foreground hover:bg-foreground/10 transition-colors"
+                    aria-label="Close IP law card"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                )}
+              </div>
+            </div>
             <div className="relative inline-flex">
               <button
                 className="inline-flex p-0 bg-transparent border-0 hover:scale-125 transition-transform focus:outline-none"
