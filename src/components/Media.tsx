@@ -29,6 +29,7 @@ type WritingEntry = {
 };
 
 const writing: WritingEntry[] = [
+{ title: "Weebs of HBS, Rise Up!", outlet: "The Harbus", year: "2026", link: "https://www.harbus.org/post/weebs-of-hbs-rise-up", featured: true },
 { title: "An HBS Discussion Group Breaks Up", outlet: "The Harbus", year: "2025", link: "https://www.harbus.org/post/an-hbs-discussion-group-breaks-up", featured: true, preview: previewHbsBreakup },
 { title: "I Have Found Work-Life Balance in the 20 Minutes Between Classes", outlet: "The Harbus", year: "2025", link: "https://www.harbus.org/post/i-have-found-work-life-balance-in-the-20-minutes-between-classes", featured: true, preview: previewWorklife },
 { title: "How to Dress for 60°F", outlet: "The Harbus", year: "2024", link: "https://www.harbus.org/post/how-to-dress-for-60-f", featured: true, preview: previewDress60 },
