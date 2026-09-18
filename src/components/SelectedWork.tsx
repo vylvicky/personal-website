@@ -155,7 +155,7 @@ const SelectedWork = () => {
           <div>
             <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60"><Rocket className="w-4 h-4 shrink-0" />AI Data</span>
             <div className="mt-5">
-              <LinkedLogo src={surgeLogo} alt="Surge AI" href="https://www.surgehq.ai/" className="h-12 md:h-18 w-auto invert mix-blend-screen" />
+              <LinkedLogo src={surgeLogo} alt="Surge AI" href="https://www.surgehq.ai/" className="h-[72px] w-auto invert mix-blend-screen" />
             </div>
           </div>
           <p className="text-sm font-body text-muted/70 leading-relaxed mt-auto">Managing end-to-end product operations</p>
