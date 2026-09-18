@@ -6,6 +6,7 @@ import summitLogo from "@/assets/logos/summit-partners.png";
 import stackadaptLogo from "@/assets/logos/stackadapt.png";
 import rnlLogo from "@/assets/logos/ruffalo-noel-levitz.png";
 import sanaLogo from "@/assets/logos/sana.png";
+import surgeLogo from "@/assets/logos/surge-ai.png";
 import workdayLogo from "@/assets/logos/workday.svg";
 import evercoreLogo from "@/assets/logos/evercore.png";
 import roadieLogo from "@/assets/logos/roadie.png";
@@ -149,23 +150,15 @@ const SelectedWork = () => {
         viewport={{ once: true, margin: "-60px" }}
         className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 auto-rows-auto lg:auto-rows-[160px] gap-3 md:gap-4 lg:gap-5">
 
-        {/* 1 · Startup Operations — Sana + TBD (Large) */}
-        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-6 row-span-1 md:row-span-2 bg-foreground text-primary-foreground p-4 md:p-5 lg:p-6">
-          <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 h-full">
-            <div className="lg:w-1/2 flex flex-col justify-between">
-              <SanaCardContent />
-            </div>
-            <div className="lg:w-1/2 flex flex-col gap-4 justify-center">
-              <div>
-                <p className="text-[10px] font-display font-bold uppercase tracking-widest text-muted/50 mb-1.5">Post-MBA Role</p>
-                <p className="text-sm font-body text-muted/70 leading-relaxed">TBD</p>
-              </div>
-              <div>
-                <p className="text-[10px] font-display font-bold uppercase tracking-widest text-muted/50 mb-1.5">Internship</p>
-                <p className="text-sm font-body text-muted/70 leading-relaxed">TBD</p>
-              </div>
+        {/* 1 · AI Data — Surge AI (Large) */}
+        <BentoCard className="col-span-4 md:col-span-4 lg:col-span-6 row-span-1 md:row-span-2 bg-foreground text-primary-foreground p-4 md:p-5 lg:p-6 flex flex-col justify-between">
+          <div>
+            <span className="flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-widest text-muted/60"><Rocket className="w-4 h-4 shrink-0" />AI Data</span>
+            <div className="mt-5">
+              <LinkedLogo src={surgeLogo} alt="Surge AI" href="https://www.surgehq.ai/" className="h-12 md:h-18 w-auto invert mix-blend-screen" />
             </div>
           </div>
+          <p className="text-sm font-body text-muted/70 leading-relaxed mt-auto">Managing end-to-end product operations</p>
         </BentoCard>
 
         {/* 2 · Growth Equity — Summit Partners (Medium) */}
