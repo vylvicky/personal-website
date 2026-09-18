@@ -6,6 +6,7 @@ import summitLogo from "@/assets/logos/summit-partners.png";
 import stackadaptLogo from "@/assets/logos/stackadapt.png";
 import rnlLogo from "@/assets/logos/ruffalo-noel-levitz.png";
 import sanaLogo from "@/assets/logos/sana.png";
+import surgeLogo from "@/assets/logos/surge-ai.png";
 import workdayLogo from "@/assets/logos/workday.svg";
 import evercoreLogo from "@/assets/logos/evercore.png";
 import roadieLogo from "@/assets/logos/roadie.png";
