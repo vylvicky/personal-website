@@ -158,7 +158,7 @@ const SelectedWork = () => {
               <LinkedLogo src={surgeLogo} alt="Surge AI" href="https://www.surgehq.ai/" className="h-[72px] w-auto invert mix-blend-screen" />
             </div>
           </div>
-          <p className="text-sm font-body text-muted/70 leading-relaxed mt-auto">Managing end-to-end product operations in AI data</p>
+          <p className="text-sm font-body text-muted/70 leading-relaxed mt-auto">Managing end-to-end product and data operations</p>
         </BentoCard>
 
         {/* 2 · Growth Equity — Summit Partners (Medium) */}
