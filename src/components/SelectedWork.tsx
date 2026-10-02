@@ -148,7 +148,7 @@ const SelectedWork = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-60px" }}
-        className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 auto-rows-auto lg:auto-rows-[160px] gap-3 md:gap-4 lg:gap-5">
+        className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 auto-rows-auto lg:auto-rows-[minmax(160px,auto)] gap-3 md:gap-4 lg:gap-5">
 
         {/* 1 · AI Data — Surge AI (Large) */}
         <BentoCard className="col-span-4 md:col-span-4 lg:col-span-6 row-span-1 md:row-span-2 bg-foreground text-primary-foreground p-4 md:p-5 lg:p-6 flex flex-col justify-between">
